@@ -1,0 +1,10 @@
+package bizkit245.gmail.com;
+
+public class SomeClass {
+
+    @Test(a = 2, b = 5)
+    
+    public void test(int a, int b){
+       System.out.println ("Summ = " + (a + b));
+    }
+}
