@@ -1,0 +1,21 @@
+package bizkit245.gmail.com;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+public class Main {
+    public static void main(String[] args) {
+    
+        SomeClass cls = new SomeClass();
+        Class<?> someClass = cls.getClass();
+
+        try {
+            Method method = someClass.getDeclaredMethod("test", int.class, int.class);
+            Test test = method.getAnnotation(Test.class);
+            method.invoke(cls, test.a(), test.b());
+
+        } catch (NoSuchMethodException | IllegalAccessException | IllegalArgumentException
+                | InvocationTargetException e) {
+        }
+    }
+}
